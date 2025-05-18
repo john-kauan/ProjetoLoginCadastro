@@ -1,7 +1,10 @@
 <app-defaut-login-layout
-    title="Tenha controle da vida financeira!!!"
+    title="Tenha controle da sua vida financeira!!!"
     primaryBtnText="Faça Login"
     secundaryBtnText="Faça Cadastro"
+    (submit)="submit()"
+    (navigate)="navigate()"
+     [disablePrimaryBtn]="!loginForm.valid"
 >
   <form [formGroup]="loginForm">
        <app-primary-input 
@@ -9,14 +12,14 @@
             inputName="email"
             type="email"
             label="E-mail"
-            placehgolder="exemplo@gmail.com"
+            placeholder="exemplo@gmail.com"
        >
             <img class="icon-email" src="iconEmail.png"/>
        </app-primary-input>
        <app-primary-input 
-            formControlName="senha"
-            inputName="senha"
-            type="senha"
+            formControlName="password"
+            inputName="password"
+            type="password"
             label="Senha"
        >
             <img class="icon-senha" src="iconSenha.png"/>
